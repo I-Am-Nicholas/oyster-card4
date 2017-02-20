@@ -36,6 +36,7 @@ describe Oystercard do
 
   describe "touching in and out" do
     before :each do
+      oystercard.top_up(10)
       oystercard.touch_in
     end
 
@@ -52,4 +53,11 @@ describe Oystercard do
       end
     end
   end
+
+    context "balance too low" do
+      it "raises an error if balance is less than £#{Oystercard::MINIMUM_BALANCE} when touching in" do
+        expect{oystercard.touch_in}.to raise_error "Insufficient balance"
+      end
+    end
+
 end
