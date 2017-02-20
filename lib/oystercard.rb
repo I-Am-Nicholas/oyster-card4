@@ -6,5 +6,4 @@ class Oystercard
     @balance = 0
   end
 
-
 end
