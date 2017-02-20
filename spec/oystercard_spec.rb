@@ -26,7 +26,30 @@ describe Oystercard do
       oystercard.top_up(20)
       expect{oystercard.deduct(10)}.to change{ oystercard.balance }.by -10
     end
-
   end
 
+  describe ".in_journey?" do
+    it "checks if oystercard in journey" do
+      expect(oystercard.in_journey?).to eq false
+    end
+  end
+
+  describe "touching in and out" do
+    before :each do
+      oystercard.touch_in
+    end
+
+    describe ".touch_in" do
+      it "changes status to in journey" do
+        expect(oystercard).to be_in_journey
+      end
+    end
+
+    describe ".touch_out" do
+      it "changes status to not in journey" do
+        oystercard.touch_out
+        expect(oystercard).to_not be_in_journey
+      end
+    end
+  end
 end
