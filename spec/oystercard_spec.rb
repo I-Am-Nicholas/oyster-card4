@@ -21,4 +21,12 @@ describe Oystercard do
     end
   end
 
+  describe ".deduct" do
+    it "deducts the fare from the balance" do
+      oystercard.top_up(20)
+      expect{oystercard.deduct(10)}.to change{ oystercard.balance }.by -10
+    end
+
+  end
+
 end
