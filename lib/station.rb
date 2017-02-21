@@ -1,7 +1,10 @@
+require 'zones'
+
 class Station
 
-  def zone
-  end
+  # include Zones
+  #
+  # grab_zone
 
 
 end

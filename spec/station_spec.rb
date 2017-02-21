@@ -10,10 +10,12 @@ describe Station do
 
   # describe "initialization" do
   #   it "gets the correct zone when given a name" do
-  #     expect(station.zone).to eq(1)
+  #     expect(station).to eq(1)
   #   end
   #
   # end
+
+  it { is_expected.to respond_to(grab_zone).with(1).argument}
 
 
 
