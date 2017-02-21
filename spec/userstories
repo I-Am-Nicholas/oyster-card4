@@ -94,3 +94,13 @@ Feature IRB:
   oystercard.touch_in(station)
   oystercard.touch_out(station)
   oystercard.history # method created to p array
+
+  ------
+
+  In order to know how far I have travelled
+  As a customer
+  I want to know what zone a station is in
+
+Feature IRB:
+  station = Station.new(name)
+  station.zone  # should automatically get the zone 
