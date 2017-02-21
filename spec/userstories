@@ -84,3 +84,13 @@ Feature IRB:
 Feature IRB:
   station = Station.new
   card.touch_in(station) # touch_in changed to include pushing the argument into an array
+  -----
+  In order to know where I have been
+  As a customer
+  I want to see to all my previous trips
+
+Feature IRB:
+  oystercard = Class.new
+  oystercard.touch_in(station)
+  oystercard.touch_out(station)
+  oystercard.history # method created to p array
