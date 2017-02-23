@@ -10,6 +10,7 @@ describe Oystercard do
     it "has a balance of 0 by default" do
       expect(oystercard.balance).to eq(0)
     end
+
     it "expects journey history to be empty by default" do
       expect(oystercard.history).to eq([])
     end
@@ -48,6 +49,7 @@ describe Oystercard do
       it "changes status to in journey" do
         expect(oystercard).to be_in_journey
       end
+
     end
 
     describe ".touch_out" do
