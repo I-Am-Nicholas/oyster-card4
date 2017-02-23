@@ -26,11 +26,11 @@ describe Oystercard do
     end
   end
 
-  describe ".in_journey?" do
-    it "checks if oystercard in journey" do
-      expect(oystercard.in_journey?).to eq false
-    end
-  end
+  # describe ".in_journey?" do
+  #   it "checks if oystercard in journey" do
+  #     expect(oystercard.in_journey?).to eq false
+  #   end
+  # end
 
   describe "using card" do
     before :each do
@@ -45,18 +45,18 @@ describe Oystercard do
       end
     end
 
-    describe ".touch_in" do
-      it "changes status to in journey" do
-        expect(oystercard).to be_in_journey
-      end
-
-    end
+    # describe ".touch_in" do
+    #   it "changes status to in journey" do
+    #     expect(oystercard).to be_in_journey
+    #   end
+    #
+    # end
 
     describe ".touch_out" do
-      it "changes status to not in journey" do
-        oystercard.touch_out(exit_station)
-        expect(oystercard).to_not be_in_journey
-      end
+      # it "changes status to not in journey" do
+      #   oystercard.touch_out(exit_station)
+      #   expect(oystercard).to_not be_in_journey
+      # end
 
       it "deducts minimum fare" do
         expect{oystercard.touch_out(exit_station)}.to change{ oystercard.balance }.by -Oystercard::MINIMUM_FARE

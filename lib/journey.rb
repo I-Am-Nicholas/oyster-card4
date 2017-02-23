@@ -16,5 +16,12 @@ class Journey
     @exit_station = station
   end
 
+  def calculate_fare
+    if @exit_station == nil
+      Oystercard::PENALTY_FARE
+    else
+      Oystercard::MINIMUM_FARE
+    end
+  end
 
 end
