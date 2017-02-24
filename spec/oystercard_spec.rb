@@ -39,12 +39,17 @@ describe Oystercard do
     end
 
     describe "reports history" do
-      it "shows that history saves entry and exit stations" do
-        oystercard.touch_out(exit_station)
-        expect(oystercard.history).to include({euston => exit_station})
+      it "shows that history saves exit station" do
+        oystercard.touch_in('old street')
+        oystercard.touch_out('Holborn')
+        expect(oystercard.history[-1].exit_station).to eq('Holborn')
+      end
+      it "shows that history saves exit station" do
+        oystercard.touch_in('old street')
+        oystercard.touch_out('Holborn')
+        expect(oystercard.history[-1].entry_station).to eq('old street')
       end
     end
-
     # describe ".touch_in" do
     #   it "changes status to in journey" do
     #     expect(oystercard).to be_in_journey
