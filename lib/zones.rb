@@ -14,5 +14,4 @@ module Zones
                    :Balham => 3,
                    :Wimbledon => 3,
                   }
-
 end
