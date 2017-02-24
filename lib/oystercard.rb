@@ -1,15 +1,19 @@
+
+require_relative 'journey'
 class Oystercard
 
-  attr_reader :balance, :history, :journey
+  attr_reader :balance, :journey_log, :history, :journey
 
   def initialize
     @balance = 0
+    @journey_log = JourneyLog.new
     @history = []
     @journey = Journey.new(nil)
   end
 
   def touch_in(entry_station)
     fail "Insufficient balance" if @balance < MINIMUM_FARE
+    # @journey_log.start(entry_station)
     @journey = Journey.new(entry_station)
   end
 

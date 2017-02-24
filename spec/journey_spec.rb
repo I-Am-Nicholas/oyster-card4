@@ -31,9 +31,12 @@ describe Journey do
   end
 
   it "remembers the exit station" do
-    card.touch_in('bank')
-    card.touch_out('kilburn')
-    expect(card.history[-1].exit_station).to eq('kilburn')
+    journey = Journey.new('bank')
+    # card.touch_in('bank')
+    journey.end_journey('kilburn')
+    # card.touch_out('kilburn')
+    expect(journey.exit_station).to eq('kilburn')
+    # expect(card.history[-1].exit_station).to eq('kilburn')
   end
 
   it "calculates the deduction of the penalty fare if no touch out" do
